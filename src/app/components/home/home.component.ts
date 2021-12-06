@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core'; 
 import { PrimeIcons } from 'primeng/api';
+// import { MessageService } from 'primeng/api';
+import { Notif } from 'src/app/interfaces/notif';
+// import { NotificationService } from 'src/app/services/notification.service';
+
+
 
 @Component({
   selector: 'app-home',
@@ -8,9 +13,15 @@ import { PrimeIcons } from 'primeng/api';
 })
 export class HomeComponent implements OnInit {
 
+  notifs : Notif[] = [];
+  notifSelectionne !: Notif;
+
   events1: any[] = [];
 
   events2: any[] = [];
+  constructor(
+    // private notifService: NotificationService,
+     ){}
 
   ngOnInit() {
     this.events1 = [
@@ -20,8 +31,11 @@ export class HomeComponent implements OnInit {
       { status: 'Delivered', date: '16/10/2020 10:00', icon: PrimeIcons.CHECK, color: '#607D8B' }
     ];
 
-    this.events2 = [
-      "2020", "2021", "2022", "2023"
-    ];
+    // this.events2 = [
+    //   "2020", "2021", "2022", "2023"
+    // ];
+    // this.notifService.getNotification()
+    // .then ((notifs) => (this.notifs = notifs));
   }
+
 }

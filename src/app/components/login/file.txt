@@ -1,0 +1,184 @@
+<div class="grid-container">
+  <div class="grid-item">
+    <h6>République du Cameroun</h6>
+    <p id="tritre1">Paix - Travail - Patrie</p>
+    <p id="tritre2">{{libelleFr}}</p>
+  </div>
+  <div class="grid-item"></div>
+  <div class="grid-item">
+    <h6>Republic of Cameroon</h6>
+    <p id="tritre1">Peace - Work - Fatherland</p>
+    <p id="tritre2">{{libelleEnglish}}</p>
+  </div>
+  <div class="grid-item"></div>
+  <!-- <div class="grid-item"><img class="image" src="assets/img/amine.jpg" alt=""></div> -->
+  <div class="grid-item"><img class="image" [src]="urlImage" alt=""></div>
+  <div class="grid-item"></div>
+</div>
+
+<div class="grid-contain">
+  <div class="post1">
+    <h1 class="titre"> {{ 'Une approche plus' | translate }}<br>{{ 'Intelligente de Suivre le Courrier' | translate }}
+    </h1> <br>
+    <p class="contenu">{{ 'Traçabilité,historisation, numérisation des pièces, sécurisation par Code Barre' | translate
+      }}<br>
+      {{ 'Eléments clés de la Digitalisation' | translate }}</p>
+  </div>
+
+  <div class="div">
+    <!-- <img src="" alt=""> -->
+  </div>
+
+  <div class="post2">
+    <img class="img2" src="assets/img/imag.png" alt="">
+    <p class="contenu2">{{ 'Désormais disponible sur tablettes et téléphone' | translate }}
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+  </div>
+
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <div class="fadeIn first">
+        <br>
+        <br>
+        <br>
+        <h1 style="position: relative; top: -35px; font-size: 30px;">COURRIER-MINT</h1>
+        <br>
+        <p-selectButton [options]="stateOptions" [(ngModel)]="value1" optionLabel="label" optionValue="value"
+          (click)="changeLang(value1)"></p-selectButton>
+
+        <!-- <button (click)="changeLang('fr')"  type="button" class="btn btn-primary langue">{{ 'Français' | translate }}</button>
+        <button (click)="changeLang('en')" type="button" class="btn btn-secondary lg2">{{ 'English' | translate }}</button> -->
+        <br>
+      </div>
+
+      <!-- Login Form -->
+
+      <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+            Login failed: {{ errorMessage }}
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username" style="position: relative; margin-top: -20px;">{{ 'Username' | translate }}</label>
+          <input style="border:1px black solid; margin-top: -10px;" type="text" class="form-control" name="username"
+            [(ngModel)]="form.username" required #username="ngModel">
+        </div>
+        <div style="position: relative; margin-top: -10px; color:red" role="alert"
+          *ngIf="username.errors && f.submitted">
+          {{ 'Username is required!' | translate }}
+        </div>
+        <div class="form-group">
+          <label for="password">{{ 'Password' | translate }}</label>
+          <input style="border:1px black solid; margin-top: -10px;" type="password" class="form-control" name="password"
+            [(ngModel)]="form.password" required minlength="6" #password="ngModel">
+
+          <div style="position: relative; margin-top: -10px; color:red" role="alert"
+            *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors.required">{{ 'Password is required' | translate }}</div>
+            <div *ngIf="password.errors.minlength">
+              {{ 'Password must be at least 6 characters' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" style="background-color: #2196F3; top:-10px; position: relative;"
+            class="fadeIn fourth btn btn-primary" value="{{ 'Se Connecter' | translate }}" id="connexion">
+        </div>
+
+      </form>
+      Se Connecter
+      <div class="alert alert-success" *ngIf="isLoggedIn">
+        Logged in as {{ roles }}.
+      </div>
+
+      <div id="formFooter">
+        <a class="underlineHover" href="#">{{ 'Mot de passe perdu?' | translate }}</a>
+      </div>
+
+    </div>
+    <div class="d-flex justify-content-center mb-4" style="position:relative; bottom:70px;"><b> {{ 'site web
+        d’informations du ministére' | translate }}:</b>&nbsp; <a (click)="getSiteMinT()"
+        href="#">www.mintransports.net</a> </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  onSubmit(): void {
+    const { username, password } = this.form;
+
+    // this.authService.login(username, password).subscribe(
+    //   data => {
+    //     this.api.roleListByUser(username).subscribe(data=>{ 
+    //       this.tokenStorage.saveRole(data)
+    //       console.log(data);
+    //      },error=>{  
+
+    //      })
+    //     this.tokenStorage.saveToken(data.accessToken);
+    //     this.tokenStorage.saveUser(data);
+    //     this.isLoginFailed = false;
+    //     this.isLoggedIn = true;
+    //     this.roles = this.tokenStorage.getUser().roles;
+    //     this.router.navigate(['/load'])
+    //     //this.reloadPage();
+    //     this.userLogin(this.tokenStorage.getUser().username)
+       
+    //   },
+    //   err => {
+    //     this.errorMessage = err.error.message;
+    //     this.isLoginFailed = true;
+    //   }
+    // );
+  }
+
+  // userLogin(login: string){
+  //   this.api.userLogin(login).subscribe(data => {
+        
+  //   },error => {
+
+  //   })
+  // }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
+
+  getSiteMinT() {
+    const URL = 'https://www.mintransports.net'
+    window.open(URL);
+  }
+
+  changeLang(lang: string) {
+    this.translate.use(lang);
+  }
+
+  // habilitation(code:string){ 
+  //   let roles:any
+  //   roles=this.tokenStorage.getRoles()
+  //   for(let role of roles){ 
+  //     if(role==code){ 
+  //       return true;
+  //     }
+  //   }
+  //   return false
+  // }
+
+

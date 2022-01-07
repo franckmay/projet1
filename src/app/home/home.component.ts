@@ -9,12 +9,18 @@ import { Notif } from 'src/app/interfaces/notif';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
+
+
+  lang = 'fr'
+  username?: string;
   notifs : Notif[] = [];
   notifSelectionne !: Notif;
+  nbrMessages: number = 0
+  nbrNotifications: number = 0
 
   events1: any[] = [];
 
@@ -36,6 +42,47 @@ export class HomeComponent implements OnInit {
     // ];
     // this.notifService.getNotification()
     // .then ((notifs) => (this.notifs = notifs));
+
+    this.username = 'admin'
+  }
+
+
+  status: any = 'courrier'
+  toggleStatus(val: string) {
+
+    this.status = val;
+    // this.tokenStorageService.saveActiveItem(val)
+  }
+  changeLang(lang: string) {
+    // this.translate.use(lang);
+  }
+
+
+
+
+  display = false
+  displayN = false
+  displayE = false
+
+  showDialog() {
+    this.display = true
+  }
+  showNotifiction() {
+    this.displayN = true
+  }
+  message: string = '';
+  showDialogError(message: string) {
+    this.message = message
+    this.displayE = true
+  }
+  close() {
+    this.display = false;
+  }
+  closeError() {
+    this.displayE = false;
+  }
+  closeNotif() {
+    this.displayN = false;
   }
 
 }

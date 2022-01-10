@@ -119,30 +119,36 @@
             <span>Notification</span>
           </a>
         </li>
-        <div class="dropdown">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <p-avatar icon="pi pi-user" styleClass="p-mr-2"  shape="circle"></p-avatar>
+        <li>
+
+          <div class="dropdown">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <p-avatar icon="pi pi-user" styleClass="p-mr-2" shape="circle"></p-avatar>
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item nav-link" routerLink="../profil">
+                  <i class="pi pi-user-edit me-1 text-primary"></i>
+                  Profile</a></li>
+              <li><a class="dropdown-item nav-link" href="#">
+                  <i class="pi pi-cog me-1 text-primary"></i>
+                  Parametres</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item nav-link" routerLink="" (click)="showDialog()">
+                  <i class="pi pi-power-off me-1 text-primary"></i>
+                  Se deconnecter</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item" style="margin-right:60px;">
+          <a class="nav-link" routerLink="notification" (click)="toggleStatus('')">
+            <span> {{username}} </span>
           </a>
-          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" routerLink="../profil">
-              <i class="pi pi-user-edit me-1 text-primary"></i>
-              Profile</a></li>
-            <li><a class="dropdown-item" href="#">
-              <i class="pi pi-cog me-1 text-primary"></i>
-              Parametres</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" routerLink="" (click)="showDialog()">
-               <i class="pi pi-power-off me-1 text-primary"></i>
-              Se deconnecter</a></li>
-          </ul>
-        </div>
-<div class="nav-item" style="margin-right:90px;"></div>
+        </li>
 
-
-      
       </ul>
 
     </div>
@@ -250,7 +256,7 @@
           (click)="toggleStatus('uniteorganique')" [ngClass]="status=='uniteorganique' ? 'active' : ' '"><i
             class="fab fa-buromobelexperte fa-fw  me-3" [ngClass]="status=='uniteorganique' ? ' ' : 'text-primary'"></i>
           <span>uniteorganique
-           
+
           </span> </a>
         <a routerLink="localiteniveau" class="list-group-item list-group-item-action py-2 ripple"
           (click)="toggleStatus('niveau')" [ngClass]="status=='niveau' ? 'active' : ' '"><i

@@ -1,0 +1,206 @@
+<header>
+
+  
+  
+
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="sidebar-wrapper collapse d-lg-block sidebar collapse bg-white">
+
+
+    <div class="position-sticky mb-5">
+      <div class="d-flex flex-column align-items-center text-center position-sticky">
+        <a style="cursor: pointer;" routerLink="profil">
+          <p-avatar icon="pi pi-user" styleClass="p-mr-2" size="xlarge" shape="circle"></p-avatar>
+          <div class="mb-3">
+            <h5>{{username}}</h5>
+          </div>
+        </a>
+      </div>
+      <div class="list-group list-group-flush mx-3 mb-5">
+        <ul class="list-unstyled ps-0">
+
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#home-collapse" aria-expanded="true">
+              {{"Cadre stratégique" | translate}}
+            </button>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='programme' ? 'active' : ' '"><a routerLink="programme" (click)="toggleStatus('programme')" class="link-dark rounded">
+                    <i class="fas fa-tasks fa-fw me-3 " [ngClass]="status=='programme' ? ' ' : 'text-secondary'"></i>
+                    <span> {{"programme" | translate}} </span>
+                  </a></li>
+                <li [ngClass]="status=='ministériel' ? 'active' : ' '"><a routerLink="ministériel" (click)="toggleStatus('ministériel')" class="link-dark rounded">{{"ministériel" | translate}}
+                  </a></li>
+                <li [ngClass]="status=='csp' ? 'active' : ' '"><a routerLink="csp" (click)="toggleStatus('csp')" class="link-dark rounded">
+                    <i class="fas fa-check-double fa-fw me-3 "
+                      [ngClass]="status=='csp' ? ' ' : 'text-secondary'"></i>
+                    {{"validation csp" | translate}}
+                  </a></li>
+                <li [ngClass]="status=='cso' ? 'active' : ' '"><a routerLink="cso" (click)="toggleStatus('cso')" class="link-dark rounded"> 
+                  <i class="fas fa-check-double fa-fw me-3 "
+                      [ngClass]="status=='cso' ? ' ' : 'text-secondary'"></i> {{"validation cso" | translate}}
+                  </a></li>
+                <li [ngClass]="status=='transCadre' ? 'active' : ' '"><a routerLink="transCadre" (click)="toggleStatus('transCadre')" class="link-dark rounded"> 
+                  <i class="fas fa-check-double fa-fw me-3 "
+                      [ngClass]="status=='transCadre' ? ' ' : 'text-secondary'"></i> {{"transmission" | translate}}
+                  </a></li>
+                <li [ngClass]="status=='Apercu' ? 'active' : ' '"><a routerLink="Apercu" (click)="toggleStatus('Apercu')" class="link-dark rounded"> 
+                  <i class="fas fa-eye fa-fw me-3 "
+                      [ngClass]="status=='Apercu' ? ' ' : 'text-secondary'"></i> {{"Apercu" | translate}}
+                  </a></li>
+                <li [ngClass]="status=='EditArch' ? 'active' : ' '"><a routerLink="EditArch" (click)="toggleStatus('EditArch')" class="link-dark rounded"> 
+                  <i class="fas fa-box-open fa-fw me-3 "
+                      [ngClass]="status=='EditArch' ? ' ' : 'text-secondary'"></i> {{"Edition et archivage" | translate}}
+                  </a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#activites-collapse" aria-expanded="false">
+              {{"Revue des activités"| translate}}
+            </button>
+            <div class="collapse" id="activites-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='refAct' ? 'active' : ' '"><a routerLink="refAct" (click)="toggleStatus('refAct')" class="link-dark rounded">{{"Référentiel d'activité par action"| translate}}</a></li>
+                <li [ngClass]="status=='refPrgm' ? 'active' : ' '"><a routerLink="refPrgm" (click)="toggleStatus('refPrgm')" class="link-dark rounded">{{"Référentiel d'activité par programme"| translate}}</a></li>
+                <li [ngClass]="status=='refReg' ? 'active' : ' '"><a routerLink="refReg" (click)="toggleStatus('refReg')" class="link-dark rounded">{{"Référentiel d'activité régional"| translate}}</a></li>
+                <li [ngClass]="status=='refMin' ? 'active' : ' '"><a routerLink="refMin" (click)="toggleStatus('refMin')" class="link-dark rounded">{{"Référentiel d'activité ministériel"| translate}}</a></li>
+                <li [ngClass]="status=='pcr' ? 'active' : ' '"><a routerLink="pcr" (click)="toggleStatus('pcr')" class="link-dark rounded">{{"Analyse PCR"| translate}}</a></li>
+                <li [ngClass]="status=='valProg' ? 'active' : ' '"><a routerLink="valProg" (click)="toggleStatus('valProg')" class="link-dark rounded">{{"Validation prog"| translate}}</a></li>
+                <li [ngClass]="status=='valMin' ? 'active' : ' '"><a routerLink="valMin" (click)="toggleStatus('valMin')" class="link-dark rounded">{{"Validation ministériel"| translate}}</a></li>
+                <li [ngClass]="status=='transRevAct' ? 'active' : ' '"><a routerLink="transRevAct" (click)="toggleStatus('transRevAct')" class="link-dark rounded">{{"Transmission"| translate}}</a></li>
+                <li [ngClass]="status=='editRappAct' ? 'active' : ' '"><a routerLink="editRappAct" (click)="toggleStatus('editRappAct')" class="link-dark rounded">{{"Edition des rapports"| translate}} </a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#projets-collapse" aria-expanded="false">
+              {{"Revue des projets d'investissements"| translate}}
+            </button>
+            <div class="collapse" id="projets-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='maturite' ? 'active' : ' '"><a routerLink="maturite" (click)="toggleStatus('maturite')" class="link-dark rounded">{{"Maturité"| translate}}</a></li>
+                <li [ngClass]="status=='valRevuePrj' ? 'active' : ' '"><a routerLink="valRevuePrj" (click)="toggleStatus('valRevuePrj')" class="link-dark rounded">{{"Validation"| translate}} </a></li>
+                <li [ngClass]="status=='transRevuePrj' ? 'active' : ' '"><a routerLink="transRevuePrj" (click)="toggleStatus('transRevuePrj')" class="link-dark rounded">{{"Transmission"| translate}} </a></li>
+                <li [ngClass]="status=='editRappPrj' ? 'active' : ' '"><a routerLink="editRappPrj" (click)="toggleStatus('editRappPrj')" class="link-dark rounded">{{"Edition des rapports"| translate}}</a></li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#performance-collapse" aria-expanded="false">{{"Revue de la performance "| translate}}
+            </button>
+            <div class="collapse" id="performance-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='bilanPF' ? 'active' : ' '"><a routerLink="bilanPF" (click)="toggleStatus('bilanPF')" class="link-dark rounded">{{"Bilan physico-financier"| translate}}</a></li>
+                <li [ngClass]="status=='cadreLprog' ? 'active' : ' '"><a routerLink="cadreLprog" (click)="toggleStatus('cadreLprog')" class="link-dark rounded">{{"Cadre logique prog"| translate}}</a></li>
+                <li [ngClass]="status=='cadreLmin' ? 'active' : ' '"><a routerLink="cadreLmin" (click)="toggleStatus('cadreLmin')" class="link-dark rounded">{{"Cadre logique ministériel"| translate}}</a></li>
+                <li [ngClass]="status=='valCadreL' ? 'active' : ' '"><a routerLink="valCadreL" (click)="toggleStatus('valCadreL')" class="link-dark rounded">{{"Validation cadre logique"| translate}}</a></li>
+                <li [ngClass]="status=='transRevuePerf' ? 'active' : ' '"><a routerLink="transRevuePerf" (click)="toggleStatus('transRevuePerf')" class="link-dark rounded">{{"Transmission"| translate}} </a></li>
+                <li [ngClass]="status=='histCL' ? 'active' : ' '"><a routerLink="histCL" (click)="toggleStatus('histCL')" class="link-dark rounded">{{"Historique des CL"| translate}}</a></li>
+                <li [ngClass]="status=='editRappPerf' ? 'active' : ' '"><a routerLink="editRappPerf" (click)="toggleStatus('editRappPerf')" class="link-dark rounded">{{"Edition des rapports"| translate}} </a></li>
+                <li [ngClass]="status=='relecPPA' ? 'active' : ' '"><a routerLink="relecPPA" (click)="toggleStatus('relecPPA')" class="link-dark rounded">{{"Relecture du PPA"| translate}}</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#Pilotage-collapse" aria-expanded="false">
+              {{"Outils de Pilotage"| translate}}
+            </button>
+            <div class="collapse" id="Pilotage-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='cartProg' ? 'active' : ' '"><a routerLink="cartProg" (click)="toggleStatus('cartProg')" class="link-dark rounded">{{"Cartographie des programmes"| translate}}</a></li>
+                <li [ngClass]="status=='charteGest' ? 'active' : ' '"><a routerLink="charteGest" (click)="toggleStatus('charteGest')" class="link-dark rounded">{{"Charte de gestion"| translate}} </a></li>
+                <li [ngClass]="status=='TabInd' ? 'active' : ' '"><a routerLink="TabInd" (click)="toggleStatus('TabInd')" class="link-dark rounded">{{"Tableau de bord des indicateurs"| translate}}</a></li>
+                <li [ngClass]="status=='protGest' ? 'active' : ' '"><a routerLink="protGest" (click)="toggleStatus('protGest')" class="link-dark rounded">{{"Protocole de gestion"| translate}} </a></li>
+                <li [ngClass]="status=='contPerf' ? 'active' : ' '"><a routerLink="contPerf" (click)="toggleStatus('contPerf')" class="link-dark rounded">{{"Contrat de performance"| translate}}</a></li>
+                <li [ngClass]="status=='contObj' ? 'active' : ' '"><a routerLink="contObj" (click)="toggleStatus('contObj')" class="link-dark rounded">{{"Contrat d'objectif"| translate}} </a></li>
+                <li [ngClass]="status=='balanceSC' ? 'active' : ' '"><a routerLink="balanceSC" (click)="toggleStatus('balanceSC')" class="link-dark rounded">{{"Balance Scored Card"| translate}} </a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#travail-collapse" aria-expanded="false">
+              {{"Plan de Travail"| translate}}
+            </button>
+            <div class="collapse" id="travail-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='elabPT' ? 'active' : ' '"><a routerLink="elabPT" (click)="toggleStatus('elabPT')" class="link-dark rounded">{{"Elaboration"| translate}}</a></li>
+                <li [ngClass]="status=='collecteDS' ? 'active' : ' '"><a routerLink="collecteDS" (click)="toggleStatus('collecteDS')" class="link-dark rounded">{{"Collecte des donnees de suivi"| translate}} </a></li>
+                <li [ngClass]="status=='tabSuivi' ? 'active' : ' '"><a routerLink="tabSuivi" (click)="toggleStatus('tabSuivi')" class="link-dark rounded">{{"Tableau de bord de suivi"| translate}} </a></li>
+                <li [ngClass]="status=='tabBudg' ? 'active' : ' '"><a routerLink="tabBudg" (click)="toggleStatus('tabBudg')" class="link-dark rounded">{{"Tableau de bord budgétaires"| translate}}</a></li>
+                <li [ngClass]="status=='tabIndPT' ? 'active' : ' '"><a routerLink="tabIndPT" (click)="toggleStatus('tabIndPT')" class="link-dark rounded">{{"Tableau de bord des indicateurs"| translate}} </a></li>
+                <li [ngClass]="status=='rappPer' ? 'active' : ' '"><a routerLink="rappPer" (click)="toggleStatus('rappPer')" class="link-dark rounded">{{"Rapports périodiques"| translate}}</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#gouvernance-collapse" aria-expanded="false">
+              {{"Gouvernance"| translate}}
+            </button>
+            <div class="collapse" id="gouvernance-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='calenBudg' ? 'active' : ' '"><a routerLink="calenBudg" (click)="toggleStatus('calenBudg')" class="link-dark rounded">{{"Calendrier budgétaire"| translate}}</a></li>
+                <li [ngClass]="status=='notif' ? 'active' : ' '"><a routerLink="notif" (click)="toggleStatus('notif')" class="link-dark rounded">{{"Notifications"| translate}}</a></li>
+                <li [ngClass]="status=='suivieAct' ? 'active' : ' '"><a routerLink="suivieAct" (click)="toggleStatus('suivieAct')" class="link-dark rounded">{{"Suivi des activités"| translate}} </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+          <li class="mb-1">
+            <button class="btn rounded sbbtn" routerLink="dossier">
+              {{"Documentation"| translate}}
+            </button>
+          </li>
+
+        </ul>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+  </nav>
+  
+  </header>
+  
+  
+  
+  
+  <main>
+    <div class="content" style="margin-top: 100px;">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

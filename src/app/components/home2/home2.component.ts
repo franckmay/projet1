@@ -3,18 +3,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { PrimeIcons, PrimeNGConfig } from 'primeng/api';
 // import { MessageService } from 'primeng/api';
 import { Notif } from 'src/app/interfaces/notif';
-// import { NotificationService } from 'src/app/services/notification.service';
-
-
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-home2',
+  templateUrl: './home2.component.html',
+  styleUrls: ['./home2.component.scss']
 })
-export class HomeComponent implements OnInit {
-
-
+export class Home2Component implements OnInit {
 
   lang = 'fr'
   username?: string;
@@ -91,3 +86,4 @@ export class HomeComponent implements OnInit {
   }
 
 }
+

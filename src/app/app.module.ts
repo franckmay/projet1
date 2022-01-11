@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -15,11 +16,12 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { BadgeModule } from "primeng/badge";
 import { ReseauComponent } from './components/reseau/reseau.component';
-import { MessagesModule } from 'primeng/messages';
-import { MessageModule } from 'primeng/message';
+
 import { RadioButtonModule } from 'primeng/radiobutton';
-import {AvatarModule} from 'primeng/avatar';
-import {AvatarGroupModule} from 'primeng/avatargroup';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { MessageService } from 'primeng/api';
+
 
 //components//
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +30,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { CalendrierComponent } from './components/calendrier/calendrier.component';
+import { Home2Component } from './components/home2/home2.component';
 
 
 
@@ -47,12 +51,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfilComponent,
     ReseauComponent,
     AccueilComponent,
+    CalendrierComponent,
+    Home2Component,
 
 
   ],
   imports: [
     HttpClientModule,
-    BrowserModule,
+    BrowserModule, BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
@@ -61,8 +67,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 
     // primeng
-    TimelineModule, CardModule, BadgeModule, SelectButtonModule, OrganizationChartModule, MessagesModule,
-    MessageModule, RadioButtonModule,AvatarModule,
+    TimelineModule, CardModule, BadgeModule, SelectButtonModule, OrganizationChartModule,
+    RadioButtonModule, AvatarModule,
     AvatarGroupModule,
 
 
@@ -74,7 +80,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,75 @@
+                        Module CONTROLE DE GESTION
+
+
+
+
+
+//////////////////////////// Lundi 10 janvier 2022 /////////////////////////////
+
+** Implémentation du menu de gauche contenant les champs ci dessous**
+
+*Cadre stratégique 
+-programme
+-ministériel
+-validation csp
+-validation cso
+-transmission
+-Apercu 
+-Edition et archivage 
+
+*Revue des activités 
+-Référentiel d'activité par action
+-Référentiel d'activité par programme
+-Référentiel d'activité régional
+-Référentiel d'activité ministériel
+-Analyse PCR
+-Validation prog
+-Validation ministériel
+-Transmission
+-Edition des rapports 
+
+*Revue des projets d'investissements
+-Maturité
+-Validation 
+-Transmission 
+-Edition des rapports
+
+*Revue de la performance 
+--Bilan physico-financier
+--Cadre logique prog
+--Cadre logique ministériel
+--Validation cadre logique
+--Transmission 
+--Historique des CL
+--Edition des rapports 
+--Relecture du PPA
+
+*Outils de Pilotage 
+-Cartographie des programmes
+-Charte de gestion 
+-Tableau de bord des indicateurs
+-Protocole de gestion 
+-Contrat de performance
+-Contrat d'objectif 
+-Balance Scored Card 
+
+*Plan de Travail 
+-Elaboration
+-Collecte des donnees de suivi 
+-Tableau de bord de suivi 
+-Tableau de bord budgétaires
+-Tableau de bord des indicateurs 
+-Rapports périodiques
+
+
+*Gouvernance
+-Calendrier budgétaire
+-Notifications
+-Suivi des activités 
+
+*Documentation
+
+
+
+/////////// Mardi 11 janvier 2022 /////////////
+

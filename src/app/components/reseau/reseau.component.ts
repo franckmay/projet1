@@ -13,21 +13,20 @@ export class ReseauComponent implements OnInit {
 
   constructor(private messageService: MessageService) { 
 
-   
   }
 
   ngOnInit(): void {
 
     this.data2 = [{
-      label: 'F.C Barcelona',
+      label: 'Administrateur',
       expanded: true,
       children: [
           {
-              label: 'F.C Barcelona',
+              label: 'Fils 1',
               expanded: true,
               children: [
                   {
-                      label: 'Chelsea FC'
+                      label: 'petit fils'
                   },
                   {
                       label: 'F.C. Barcelona'
@@ -35,7 +34,7 @@ export class ReseauComponent implements OnInit {
               ]
           },
           {
-              label: 'Real Madrid',
+              label: 'Fils 2',
               expanded: true,
               children: [
                   {

@@ -176,8 +176,163 @@
           </div>
         </a>
       </div>
-
       <div class="list-group list-group-flush mx-3 mb-5">
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#home-collapse" aria-expanded="true">
+              Cadre stratégique
+            </button>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='programme' ? 'active' : ' '"><a routerLink="programme" (click)="toggleStatus('programme')" class="link-dark rounded">
+                    <i class="fas fa-tasks fa-fw me-3 " [ngClass]="status=='programme' ? ' ' : 'text-secondary'"></i>
+                    <span> programme </span>
+                  </a></li>
+                <li [ngClass]="status=='ministériel' ? 'active' : ' '"><a routerLink="ministériel" (click)="toggleStatus('ministériel')" class="link-dark rounded">ministériel
+                  </a></li>
+                <li [ngClass]="status=='csp' ? 'active' : ' '"><a routerLink="csp" (click)="toggleStatus('csp')" class="link-dark rounded">
+                    <i class="fas fa-check-double fa-fw me-3 "
+                      [ngClass]="status=='csp' ? ' ' : 'text-secondary'"></i>
+                    validation csp
+                  </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded"> 
+                  <i class="fas fa-check-double fa-fw me-3 "
+                      [ngClass]="status=='dossier' ? ' ' : 'text-secondary'"></i> validation cso
+                  </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded"> 
+                  <i class="fas fa-check-double fa-fw me-3 "
+                      [ngClass]="status=='dossier' ? ' ' : 'text-secondary'"></i> transmission
+                  </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded"> 
+                  <i class="fas fa-eye fa-fw me-3 "
+                      [ngClass]="status=='dossier' ? ' ' : 'text-secondary'"></i> Apercu
+                  </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded"> 
+                  <i class="fas fa-box-open fa-fw me-3 "
+                      [ngClass]="status=='dossier' ? ' ' : 'text-secondary'"></i> Edition et archivage
+                  </a></li>
+              </ul>
+            </div>
+          </li>
+
+
+
+
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse" aria-expanded="false">
+              Revue des activités
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Référentiel d'activité par action</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Référentiel d'activité par programme</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Référentiel d'activité régional</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Référentiel d'activité ministériel</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Analyse PCR</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Validation prog</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Validation ministériel</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Transmission</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Edition des rapports </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#orders-collapse" aria-expanded="false">
+              Revue des projets d'investissements
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Maturité</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Validation </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Transmission </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Edition des rapports</a></li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#account-collapse" aria-expanded="false">Revue de la performance
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Bilan physico-financier</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Cadre logique prog</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Cadre logique ministériel</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Validation cadre logique</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Transmission </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Historique des CL</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Edition des rapports </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Relecture du PPA</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#account-collapse" aria-expanded="false">
+              Outils de Pilotage
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Cartographie des programmes</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Charte de gestion </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Tableau de bord des indicateurs</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Protocole de gestion </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Contrat de performance</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Contrat d'objectif </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Balance Scored Card </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#account-collapse" aria-expanded="false">
+              Plan de Travail
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Elaboration</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Collecte des donnees de suivi </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Tableau de bord de suivi </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Tableau de bord budgétaires</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Tableau de bord des indicateurs </a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Rapports périodiques</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#account-collapse" aria-expanded="false">
+              Gouvernance
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Calendrier budgétaire</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Notifications</a></li>
+                <li [ngClass]="status=='dossier' ? 'active' : ' '"><a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Suivi des activités </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+          <li class="mb-1">
+            <a routerLink="dossier" (click)="toggleStatus('dossier')" class="link-dark rounded">Documentation </a>
+          </li>
+
+        </ul>
+      </div>
+
+
+
+
+
+
+
+
+
+      <!-- <div class="list-group list-group-flush mx-3 mb-5">
 
         <a routerLink="editcourrier" class="list-group-item list-group-item-action py-2 ripple "
           (click)="toggleStatus('add')" [ngClass]="status=='add' ? 'active' : ' '" aria-current="true">
@@ -213,9 +368,9 @@
           <span>
             dossier</span>
         </a>
-        <!--<a routerLink="piecejointe" class="list-group-item list-group-item-action py-2 ripple"
+        <a routerLink="piecejointe" class="list-group-item list-group-item-action py-2 ripple"
             ><i class="fas fa-chart-bar fa-fw me-3"></i> <span>pjointe</span></a
-          >-->
+          >
 
         <a routerLink="secteur" class="list-group-item list-group-item-action py-2 ripple"
           (click)="toggleStatus('secteur')" [ngClass]="status=='secteur' ? 'active' : ' '"><i
@@ -277,7 +432,7 @@
           <span> Dashboard
           </span> </a>
 
-      </div>
+      </div> -->
 
     </div>
   </nav>
@@ -295,8 +450,8 @@
 
 
   <nav class="navbar fixed-bottom navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container-fluid d-flex justify-content-end">
+      <div class="row ">
         <div class="col-md-8">
           <a class="navbar-brand" href="#">Assistance technique</a>
         </div>

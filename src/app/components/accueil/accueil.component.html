@@ -1,7 +1,7 @@
 <h2 class="d-flex justify-content-center text-primary">Calendrier Budgetaire</h2>
 <hr style="margin-bottom: 20px;">
 
-
+<!-- 
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
@@ -85,7 +85,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
@@ -109,38 +109,35 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <div class="card">
-        <div class="body" *ngFor="let item of annee; let i = index;">
-          {{item.libelleFr}}
+      <div class="card" *ngFor="let item of annee; let i = index;">
+        <div class="body">
+          {{item.libelleFr}} hey
 
-          <div class="progress" >
+          <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="25" *ngFor="let month of annee[i].mois"
-              aria-valuemin="0" aria-valuemax="100" style="width: 25%;" 
+              aria-valuemin="0" aria-valuemax="100" style="width: 25%;"
               [ngClass]="month.status=='terminé' ? 'progress-bar-striped bg-info': month.status=='en cours' ? 'progress-bar-striped progress-bar-animated' : 'bg-secondary'">
-              <i *ngIf="month.status=='en cours' else autre" class="pi pi-angle-double-up p-mr-4 p-text-danger" style="font-size: 1rem"> {{month.detail}} </i>
+              <a data-bs-toggle="collapse"  aria-expanded="false" aria-controls="collapseDetails"
+                *ngIf="month.status=='en cours' else autre" (click)="setDetails(month.moisID, month.status)" href="#aa{{item.libelleFr}}">
+                <i class="pi pi-angle-double-up p-mr-4 p-text-danger" style="font-size: 1rem"> {{month.detail}} </i>
+              </a>
 
-              <ng-template #autre> 
-              <a  data-bs-toggle="collapse" href="#collapseDetails" aria-expanded="false" aria-controls="collapseDetails"> {{month.detail}} </a>
-            </ng-template>
+              <ng-template #autre>
+                <a data-bs-toggle="collapse" href="#aa{{item.libelleFr}}" aria-expanded="false"
+                  aria-controls="collapseDetails"> {{month.detail}} </a>
+              </ng-template>
 
-           
+            </div>
+
           </div>
-
-          
-
-          <a data-bs-toggle="collapse" href="#collapseDetails" aria-expanded="false" aria-controls="collapseDetails">
-
-          </a>
-        </div>
-        <div class="card-footer text-muted">
-          <div class="collapse" id="collapseDetails">
-            <div class="card card-body">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when
-              the user activates the relevant trigger.
+          <div class="card-footer text-muted">
+            <div class="collapse" id="aa{{item.libelleFr}}">
+              <div class="card card-body">
+                {{item.libelleFr}} {{details}}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

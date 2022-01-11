@@ -28,7 +28,7 @@ export class AccueilComponent implements OnInit {
       console.log(data);
       this.annee = data
       this.mois = this.annee[0].mois
-      
+
       // this.annee.forEach(element => {
       //   for (let index = 0; index < element.mois.length; index++) {
       //     console.log(element.mois[index].moisID);
@@ -48,6 +48,16 @@ export class AccueilComponent implements OnInit {
 
   setState() {
 
+  }
+
+  monthID = ''
+  details = ''
+  setDetails(id: string, data: any) {
+
+    this.monthID = id
+    console.log(id);
+    
+    this.details = data
   }
 
 }
